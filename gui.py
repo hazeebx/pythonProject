@@ -7,7 +7,7 @@ class App(tk.Tk):
         super().__init__()
 
         self.title("Weld Defect Prediction")
-        self.geometry("600x600")
+        self.geometry("800x800")
 
         # Adding a button
         upload_button = tk.Button(self, text="Upload Image", command=self.upload_image)
