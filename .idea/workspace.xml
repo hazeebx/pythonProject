@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a06aa4fa-50fd-45e6-9c3b-24b7a026fd6b" name="Changes" comment="Initial Commit">
+      <change afterPath="$PROJECT_DIR$/weld_parameters_ML.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/welding_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +41,7 @@
     "Python.gui.executor": "Run",
     "Python.gui_functions.executor": "Run",
     "Python.test.executor": "Run",
+    "Python.weld_parameters_ML.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -94,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711125055628</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Initial Commit">
+      <option name="closed" value="true" />
+      <created>1711125405766</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711125405766</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
