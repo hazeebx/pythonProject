@@ -3,33 +3,20 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 import matplotlib.pyplot as plt
+import pandas as pd
 
-# Sample dataset
-#[Current, Voltage, Speed, Angle]
-X = np.array([[90, 25, 40, 0],
-              [90, 25, 40, 5],
-              [90, 25, 40, 10],
-              [90, 25, 40, 15],
-              [90, 25, 40, 20],
-              [95, 21, 60, 15],
-              [95, 22, 60, 15],
-              [95, 23, 60, 15],
-              [95, 24, 60, 15],
-              [95, 25, 60, 15],
-              [100, 23, 40, 10],
-              [100, 23, 60, 10],
-              [100, 23, 80, 10],
-              [90, 21, 80, 5],
-              [95, 21, 80, 5],
-              [100, 21, 80, 5],
-              [105, 21, 80, 5],
-              [110, 21, 80, 5]])
-y_depth = np.array([1.01, 1.01, 1.02, 0.99, 0.98, 1.00, 0.98, 0.97, 0.96, 0.94, 0.98, 1.01, 1.05, 0.92, 0.93, 0.96, 0.99, 1.01])
-y_reinforcement = np.array([2.14, 2.14, 2.15, 2.12, 2.10, 2.07, 2.08, 2.10, 2.12, 2.13, 2.18, 2.16, 2.12, 2.14, 2.12, 2.10, 2.09, 2.07])
-y_bead_height = np.array([8.14, 8.13, 8.14, 8.18, 8.22, 7.20, 7.27, 7.29, 7.31, 7.32, 7.37, 7.35, 7.31, 7.26, 7.29, 7.31, 7.33, 7.36])
+# Read the dataset from the CSV file
+data = pd.read_csv('welding_data.csv')
+
+# Extract features (X) and target variables (y)
+X = data[['Current', 'Voltage', 'Speed', 'Angle']].values
+y_depth = data['Depth'].values
+y_reinforcement = data['Reinforcement'].values
+y_bead_height = data['Height'].values
 
 # Split data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y_depth, test_size=0.2, random_state=42)
+
 
 # Initialize and train the Random Forest Regression model
 model_depth = RandomForestRegressor()

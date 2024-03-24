@@ -16,14 +16,15 @@ def message_handler(update, context):
 
         # Process the channel post
         # In this example, we'll just print the text of the channel post
-        print("Channel Post Text:", channel_post.text)
+        recieved = channel_post.text
+        print( recieved)
     else:
         # Process the message (for direct messages or messages in groups)
         # In this example, we'll just print the text of the message
         print("Message Text:", update.message.text)
 
 
-def main():
+def main(a):
     # Replace 'YOUR_BOT_API_TOKEN' with your bot's API token
     updater = Updater("6839264217:AAHR26B2X13KBFMt-ZN1YcFJa0JBIcp-ir4", use_context=True)
 
@@ -42,7 +43,7 @@ def main():
     # Replace 'YOUR_CHANNEL_ID' with the ID of the channel you want to send the message to
     chat_id = '-1002139101529'
     # Replace 'YOUR_MESSAGE_TEXT' with the text of the message you want to send
-    message_text = 'YOUR_MESSAGE_TEXT'
+    message_text = a
 
     # Call the send_message function
     send_message("6839264217:AAHR26B2X13KBFMt-ZN1YcFJa0JBIcp-ir4", chat_id, message_text)
@@ -52,4 +53,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main("test")

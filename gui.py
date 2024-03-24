@@ -3,13 +3,14 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import tg_bot
 
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
 
         self.title("Weld Defect Prediction")
-        self.geometry("800x800")
+        self.geometry("600x800")
 
         # Prevent the window from being resized
         self.resizable(width=True, height=False)
@@ -39,7 +40,9 @@ class App(tk.Tk):
         # Submit Button
         submit_button = tk.Button(self, text="Submit", command=self.submit_parameters)
         submit_button.grid(row=len(self.parameters) + 4, column=0, columnspan=2, pady=10, padx=10, sticky="ew")
-
+        # tgSubmit Button
+        tgsubmit_button = tk.Button(self, text="Submit2", command=self.submit_to_tg)
+        tgsubmit_button.grid(row=len(self.parameters) + 4, column=2, columnspan=2, pady=10, padx=10, sticky="ew")
         # Output Area
         output_frame = tk.Frame(self, bd=2, relief=tk.GROOVE)
         output_frame.grid(row=8, column=0, columnspan=2, pady=10, padx=10, sticky="news")
@@ -78,6 +81,7 @@ class App(tk.Tk):
         self.image_label.image = tk_image  # Keep a reference to avoid garbage collection
 
 
+
     def submit_parameters(self):
         # Get the parameter values
         parameter_values = self.get_parameter_values()
@@ -100,6 +104,8 @@ class App(tk.Tk):
         for parameter, entry in self.parameter_entries.items():
             parameter_values[parameter] = entry.get()
         return parameter_values
+    def submit_to_tg(self):
+        tg_bot.main("Submit")
 
 if __name__ == "__main__":
     app = App()
