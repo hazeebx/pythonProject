@@ -17,7 +17,7 @@ def message_handler(update, context):
         # Process the channel post
         # In this example, we'll just print the text of the channel post
         recieved = channel_post.text
-        print( recieved)
+        print(recieved)
     else:
         # Process the message (for direct messages or messages in groups)
         # In this example, we'll just print the text of the message
