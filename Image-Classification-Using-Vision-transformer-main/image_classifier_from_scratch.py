@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1FJdgPQ8A5vdinofWVUOIo1xAvQJNxlf5
 """
 
-
 import torch
 import matplotlib.pyplot as plt
 import torch
