@@ -7,11 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1FJdgPQ8A5vdinofWVUOIo1xAvQJNxlf5
 """
 
-!python --version
 
 import torch
-torch.__version__
-
 import matplotlib.pyplot as plt
 import torch
 import torchvision
